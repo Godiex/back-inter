@@ -16,6 +16,7 @@ public class MapsterSettings
             .Map(dest => dest.Professor, src => src.ProfessorSubjects.First().Professor.Adapt<ProfessorDto>());
         
         TypeAdapterConfig<StudentSubject, GetSubjectByIdentificationDto>.NewConfig()
+            .Map(dest => dest.Id, src => src.Subject.Id)
             .Map(dest => dest.Name, src => src.Subject.Name)
             .Map(dest => dest.Professor, src => src.Professor.Adapt<ProfessorDto>());
 
